@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body{
+            background-color: darkgoldenrod;
+        }
+        h1,h3{
+        text-align: center;
+        color: chartreuse;
+        }
+        form{
+            text-align: center;
+        }
+        *{
+            color:red;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>REGISTRATION FORM</h1>
+    <h3>Fill the Registeration Form Below</h3>
+    <form id="registrationForm">
+        <label>
+            Username: <input type="text" name="username" id="username">
+        </label> <br><br>
+        <label>
+            Password: <input type="password" name="pwd" id="password">
+        </label> <br><br>
+        <label>
+            Confirm Password: <input type="password" name="con" id="confirmPassword">
+        </label> <br><br>
+        <label>
+            Gmail: <input type="email" name="mail" id="email">
+        </label> <br><br>
+        <label>
+            Mobile: <input type="tel" name="mob" id="mobile">
+        </label> <br><br>
+        <button type="button" onclick="validateForm()">Register</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var email = document.getElementById('email').value.trim();
+            var mobile = document.getElementById('mobile').value.trim();
+
+            // Simple validation
+            if (username === '' || password === '' || confirmPassword === '' || email === '' || mobile === '') {
+                alert('Please fill in all fields');
+                return;
+            }
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+
+            if (password<6)
+            {
+                alert("ENTER SIX dIGIT PASSWORD")
+            }
+            if(password>6)
+                {
+                    alert("ENTER SIX dIGIT PASSWORD")
+                }
+            alert('Registration Successful!'); 
+        }
+    </script>
+</body>
+</html>
